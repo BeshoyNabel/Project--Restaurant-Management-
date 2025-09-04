@@ -21,7 +21,7 @@
 - [🚀 Features](#-features)
 - [🛠️ Tech Stack](#️-tech-stack)
 - [⚙️ Installation & Setup](#️-installation--setup)
-- [📸 Screenshots](#-screenshots)
+- [📸 Screenshots](#-screenshots--demo)
 - [📂 Project Structure](#-project-structure)
 - [👨‍💻 Author](#-author)
 - [📜 License](#-license)
