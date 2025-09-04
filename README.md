@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  A complete **Restaurant Management System** built with **Django** and **PostgreSQL**,  
-  designed to manage **customers**, **menu items**, and **orders** efficiently.
+  A complete <b>Restaurant Management System</b> built with <b>Django</b> and <b>PostgreSQL</b>,  
+  designed to manage <b>customers</b>, <b>menu items</b>, and <b>orders</b> efficiently.
 </p>
 
 ---
@@ -76,12 +76,13 @@ With seamless integration of **PostgreSQL** via **pgAdmin**, the system ensures 
 
 ## 🛠️ Tech Stack
 
-| **Category**   | **Technology**     |
-|---------------|---------------------|
-| **Backend**   | Django (Python)     |
-| **Database**  | PostgreSQL (pgAdmin)|
-| **Frontend**  | HTML, CSS           |
-| **Environment** | Virtualenv        |
+
+| **Category**    | **Technology** |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Backend**     | ![Django](https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white) |
+| **Database**    | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white) |
+| **Frontend**    | ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) |
+| **Environment** | ![Virtualenv](https://img.shields.io/badge/Virtualenv-3C873A?style=flat&logo=python&logoColor=white) |
 
 ---
 
@@ -189,6 +190,7 @@ http://127.0.0.1:8000/admin/
 
 ---
 ## 📂 Project Structure
+```
 Project--Restaurant-Management-/
 │
 ├── .venv/                          # Virtual environment
@@ -253,7 +255,7 @@ Project--Restaurant-Management-/
 ├── requirements.txt                # Python dependencies
 ├── README.md                       # Project documentation
 └── LICENSE                         # Project license (MIT or other)
-
+```
 ---
 ## 👨‍💻 Author
 
