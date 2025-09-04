@@ -1,0 +1,82 @@
+{% extends 'display_order.html' %}
+{% load static %}
+{% block title %}Edit Order{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/Form_Edit.css' %}">
+{% endblock %}
+{% block extra_js %}
+{{ menu_items|json_script:"menu" }}
+{{ order|json_script:"order" }}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+<script src="{% static 'js/Form_Edit.js' %}" defer></script>
+{% endblock %}
+{% block content2 %}
+<!-- MultiStep Form -->
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2><strong>Edit Order</strong></h2>
+                <p>Fill all form field to go to next step</p>
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li id="order" class="active"><strong class="strong">Edit Order</strong ></li>
+                                <li id="confirm"><strong class="strong">Finish</strong></li>
+                            </ul>
+                            <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Choise Order</h2>
+                                    <br />
+                                    <div class="row" id="menu-items">
+                                        {% for item in menu_items %}
+                                        <div class="menu">
+                                            <h2 class="h2">{{item.item_name}}</h2>
+                                            <h3 class="h2">Prise: ${{item.price}}</h3>
+                                            <span>
+                                                <h4 class="h4">Details:</h4>
+                                                <p class='h4'>{{item.description}}</p>
+                                            </span>
+                                            <center>
+                                                <span>
+                                                    <button type="button" class="add" id="{{item.id}}"><img
+                                                            src="{% static 'img/add.ico' %}" alt="Home Icon"
+                                                            style="width: 30px; height: 30px;"></button>
+                                                    <input type="number" id="quantity_{{item.id}}" name="quantity"
+                                                        min="0" value="0" style="width: 60px; text-align: center;"
+                                                        disabled />
+                                                    <button type="button" id="{{item.id}}" name="decrease"
+                                                        class="remove"><img src="{% static 'img/minus.ico' %}"
+                                                            alt="Home Icon" style="width: 30px; height: 30px;"></button>
+                                                </span>
+                                            </center>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <input type="button" name="next" id="fnext" class="next action-button" value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card" id="order_summary">
+                                </div>
+                                <input type="button" name="previous" class="previous action-button-previous"
+                                    value="Previous" />
+                                <input type="hidden" name="order" id="order" />
+                                <input type="submit" name="make_payment" class="action-button" value="Confirm" />
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

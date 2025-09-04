@@ -1,0 +1,82 @@
+[
+    {
+        "model": "Menu.MenuItem",
+        "fields": {
+            "item_name": "Margherita Pizza",
+            "price": 120.50,
+            "description": "Classic pizza with fresh mozzarella and basil"
+        }
+    },
+    {
+        "model": "Menu.MenuItem",
+        "fields": {
+            "item_name": "Pepperoni Pizza",
+            "price": 135.00,
+            "description": "Spicy pepperoni slices on mozzarella and tomato sauce"
+        }
+    },
+    {
+        "model": "Menu.MenuItem",
+        "fields": {
+            "item_name": "Cheese Burger",
+            "price": 90.00,
+            "description": "Juicy beef burger topped with cheddar cheese"
+        }
+    },
+    {
+        "model": "Menu.MenuItem",
+        "fields": {
+            "item_name": "Chicken Burger",
+            "price": 85.00,
+            "description": "Crispy fried chicken breast with mayo and lettuce"
+        }
+    },
+    {
+        "model": "Menu.MenuItem",
+        "fields": {
+            "item_name": "Pasta Alfredo",
+            "price": 150.00,
+            "description": "Creamy Alfredo sauce with fettuccine pasta"
+        }
+    },
+    {
+        "model": "Menu.MenuItem",
+        "fields": {
+            "item_name": "Greek Salad",
+            "price": 70.00,
+            "description": "Fresh lettuce, olives, feta cheese, and olive oil dressing"
+        }
+    },
+    {
+        "model": "Menu.MenuItem",
+        "fields": {
+            "item_name": "Caesar Salad",
+            "price": 75.00,
+            "description": "Romaine lettuce with Caesar dressing and croutons"
+        }
+    },
+    {
+        "model": "Menu.MenuItem",
+        "fields": {
+            "item_name": "French Fries",
+            "price": 40.00,
+            "description": "Crispy golden potato fries with ketchup"
+        }
+    },
+    {
+        "model": "Menu.MenuItem",
+        "fields": {
+            "item_name": "Chocolate Cake",
+            "price": 60.00,
+            "description": "Rich and moist chocolate layered cake"
+        }
+    },
+    {
+        "model": "Menu.MenuItem",
+        "fields": {
+            "item_name": "Vanilla Milkshake",
+            "price": 55.00,
+            "description": "Creamy vanilla milkshake topped with whipped cream"
+        }
+    }
+]

@@ -1,0 +1,66 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block extra_head %}
+<link rel="icon" type="image/x-icon" href="{% static 'img/order.ico' %}">{% endblock %}
+{% block title %}Order Details{% endblock %}
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/order.css' %}">
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/order.js' %}" defer></script>
+{% endblock %}
+{% block content %}
+<div id="header_Menu">
+    <h2>Orders Details</h2>
+    <nav>
+        <ul>
+            <li><a href="{% url 'order_home' %}">Display Orders</a></li>
+            <li><a href="{% url 'add_order' %}">Add Order</a></li>
+        </ul>
+    </nav>
+</div>
+{% block content2 %}
+<h1>Orders</h1>
+<input type="text" class="input" id="search-input" placeholder="Search by Customer" required />
+<div class="Order_info">
+    {% for order in orders %}
+    <div class="card">
+        <span style="display: flex; justify-content: space-between;">
+            <h2 class="fs-title" style="text-align: left;">{{ order.customer_name }}</h2>
+            <h2 class="fs-title" style="text-align: right;">{{ order.customer_phone }}</h2>
+        </span>
+        <br />
+        <table class="fixed_header">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in order.order_items.all %}
+                <tr>
+                    <th>{{ item.menu_item.item_name }}</th>
+                    <th>{{ item.quantity }}</th>
+                    <th>${{ item.total_price|floatformat:2 }}</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h2 class="fs-title">Total Price: ${{ order.totalprice|floatformat:2 }}</h2>
+        <br />
+        <center>
+        <span>
+            <a href="{% url 'edit_order' order.id %}" class="edit"><img src="{% static 'img/edit.ico' %}"
+                    alt="Home Icon" style="width: 17px; height: 17px;"> Edit</a>
+            <a href="{% url 'delete_order' order.id %}" class="delete"><img
+                    src="{% static 'img/trash1.ico' %}" alt="Home Icon" style="width: 15px; height: 15px;"> Delete</a>
+        </span>
+        </center>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+{% endblock %}

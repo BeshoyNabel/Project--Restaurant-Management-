@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block extra_head %}<link rel="icon" type="image/x-icon" href="{% static 'img/support.ico' %}">{% endblock %}
+{% block title %}Customer Details{% endblock %}
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/contact.js' %}" defer></script>
+{% endblock %}
+{% block content %}
+<div id="header_customer">
+    <h2>Customer Details</h2>
+    <nav>
+        <ul>
+            <li><a href="{% url 'customer_home' %}">Display Customers</a></li>
+            <li><a href="{% url 'customer_detail' %}">Display Customer Orders</a></li>
+            <li><a href="{% url 'add_customer' %}">Add Customer</a></li>
+        </ul>
+    </nav>
+</div>
+{% block content2 %}
+<h1>Customers information</h1>
+<input type="text" class="input" id="search-input" placeholder="Search by name" />
+<div id="customer_info">
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th>Name <a href="{% url 'sort_customers' %}?sort_by={{ next_sort }}" id="sort-name">
+                        {% if sort_by == 'Asc' %}
+                        ▲
+                        {% else %}
+                        ▼
+                        {% endif %}
+                    </a></th>
+                <th>Phone</th>
+                <th>E-mail</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody align="center">
+            {% for customer in customers %}
+            <tr>
+                <td class="t1">{{ customer.name }}</td>
+                <td class="t1">{{ customer.phone }}</td>
+                <td class="t1">{{ customer.email }}</td>
+                <td><a href="{% url 'edit_customer' customer.name customer.phone %}" class="edit"><img src="{% static 'img/edit.ico' %}" alt="Home Icon" style="width: 30px; height: 30px;"></a></td>
+                <td><a href="{% url 'delete_customer' customer.name customer.phone %}" class="delete"><img src="{% static 'img/trash1.ico' %}" alt="Home Icon" style="width: 30px; height: 30px;"></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tr align="center">
+            <td colspan="5">Number of Customers: {{ customers.count }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
+{% endblock %}

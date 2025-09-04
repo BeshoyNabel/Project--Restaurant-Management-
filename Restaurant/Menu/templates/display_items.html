@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block extra_head %}
+<link rel="icon" type="image/x-icon" href="{% static 'img/menu2.ico' %}">{% endblock %}
+{% block title %}Menu Details{% endblock %}
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/menu.js' %}" defer></script>
+{% endblock %}
+{% block content %}
+<div id="header_Menu">
+    <h2>Menu Details</h2>
+    <nav>
+        <ul>
+            <li><a href="{% url 'menu_home' %}">Display Items</a></li>
+            <li><a href="{% url 'add_menu_item' %}">Add Item</a></li>
+        </ul>
+    </nav>
+</div>
+{% block content2 %}
+<h1>Menu Items</h1>
+<input type="text" class="input" id="search-input" placeholder="Search by Item" required/>
+<div class="Menu_info">
+    {% for item in menu_items %}
+    <div class="card">
+        <h2 class="h2">{{item.item_name}}</h2>
+        <h3 class="h2">Prise: ${{item.price}}</h3>
+        <span>
+            <h4 class="h4">Details:</h4>
+            <p class='h4'>{{item.description}}</p>
+        </span>
+        <center>
+            <span>
+                <a href="{% url 'edit_menu_item' item.item_name %}" class="edit"><img src="{% static 'img/edit.ico' %}" alt="Home Icon" style="width: 17px; height: 17px;"> Edit</a>
+                <a href="{% url 'delete_menu_item' item.item_name %}" class="delete"><img src="{% static 'img/trash1.ico' %}" alt="Home Icon" style="width: 15px; height: 15px;"> Delete</a>
+            </span>
+        </center>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+{% endblock %}

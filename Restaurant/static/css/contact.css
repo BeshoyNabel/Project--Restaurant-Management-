@@ -1,0 +1,100 @@
+body {
+  scrollbar-color: #333 transparent;
+}
+#customer_info {
+  width: 90%;
+  margin: 15px auto;
+  padding: 10px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 160px;
+}
+.input {
+  width: 250px;
+  padding: 10px;
+  margin: 10px 5px;
+  border: 5px solid;
+  border-color: goldenrod;
+  animation: mymove 5s infinite;
+  border-radius: 20px;
+  font: 1em sans-serif;
+  color: goldenrod;
+}
+
+@keyframes mymove {
+  50% {border-color: rgb(96, 72, 0);}
+}
+label {
+  font-size: medium;
+  font-weight: bold;
+  margin-right: 15px;
+  color: black;
+}
+#list {
+  display: block;
+}
+button.delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+}
+button.edit {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+}
+.task {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+table {
+  width: 100%;
+  color: rgb(255, 255, 255);
+  font: 1.2em sans-serif;
+  text-shadow: 0px 0px 10px goldenrod;
+  background-color:  rgba(243, 210, 148, 0.4);
+  border-radius: 20px;
+  box-shadow:0px 0px 10px 0px black;
+}
+
+th,td,.t1 {
+  padding: 15px;
+}
+.t1:hover {
+  text-shadow: 0px 0px 10px goldenrod;
+  border-radius: 30px;
+  border: 1px solid black;
+  background:linear-gradient(to left, rgb(255, 183, 0), rgb(92, 75, 31));
+  color: black;
+}
+
+
+#header_customer {
+  background-color: black;
+  padding: 10px 0;
+  text-align: center;
+  width: 35%;
+  margin: auto;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0px 10px 10px goldenrod;
+}
+
+h1,h2{
+  color: white;
+}
+h1{
+  
+  text-shadow: 0px 0px 10px goldenrod;
+}
+
+header {
+  position: initial;
+}
